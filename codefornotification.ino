@@ -105,7 +105,9 @@ void loop() {
                         break;
                         case 2 :
                         //Input 2 tripped so turn off relay, then go to soft AP mode for timer configuration.
-                        command(0, true);
+			if(!status & 1){
+                             command(0, true);
+			}
                         break;
                         case 3 :
                         //Input 3 tripped so turn off relay, then go into safe mode.
